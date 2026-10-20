@@ -35,6 +35,8 @@ Chat Completions follows the OpenAI surface: `tools`, `tool_choice`, `n`, `seed`
 | [examples/litellm.py](examples/litellm.py) | LiteLLM `custom_openai` pass-through |
 | [examples/crewai.py](examples/crewai.py) | CrewAI agent with the documented LLM class pattern |
 | [examples/dspy_program.py](examples/dspy_program.py) | DSPy program on `deepseek-v4.1-flash` |
+| [examples/smoke-test.sh](examples/smoke-test.sh) | Key check, models list, completion, streaming, tools round-trip |
+| [examples/aider.yml](examples/aider.yml) | Aider config pointed at the endpoint |
 
 ## Status monitor
 
