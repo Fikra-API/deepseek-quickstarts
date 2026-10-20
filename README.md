@@ -38,7 +38,7 @@ Chat Completions follows the OpenAI surface: `tools`, `tool_choice`, `n`, `seed`
 
 ## Status monitor
 
-`fikra-benchmark` runs a nightly Chat Completions probe across the DeepSeek lanes and commits a status table.
+`lane-probe.yml` in this repo runs nightly (02:17 UTC): one 16-token Chat Completions call per DeepSeek lane, commits `lanes.json` here.
 
 ## Contribute
 
