@@ -37,6 +37,7 @@ Chat Completions follows the OpenAI surface: `tools`, `tool_choice`, `n`, `seed`
 | [examples/dspy_program.py](examples/dspy_program.py) | DSPy program on `deepseek-v4.1-flash` |
 | [examples/smoke-test.sh](examples/smoke-test.sh) | Key check, models list, completion, streaming, tools round-trip |
 | [examples/aider.yml](examples/aider.yml) | Aider config pointed at the endpoint |
+| [examples/strands.py](examples/strands.py) | Strands Agents via the OpenAI provider |
 
 ## Status monitor
 
