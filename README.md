@@ -39,6 +39,16 @@ Chat Completions follows the OpenAI surface: `tools`, `tool_choice`, `n`, `seed`
 | [examples/aider.yml](examples/aider.yml) | Aider config pointed at the endpoint |
 | [examples/strands.py](examples/strands.py) | Strands Agents via the OpenAI provider |
 
+## Strands Agents
+
+`examples/strands.py` runs a one-shot agent through the SDK's built-in OpenAI provider pointed at `https://api.fikraapi.co.ke/v1` (model `deepseek-v4.1-flash`):
+
+```python
+pip install 'strands-agents[openai]'
+export FIKRA_API_KEY=...  # https://fikraapi.co.ke
+python examples/strands.py
+```
+
 ## Status monitor
 
 `lane-probe.yml` in this repo runs nightly (02:17 UTC): one 16-token Chat Completions call per DeepSeek lane, commits `lanes.json` here.
