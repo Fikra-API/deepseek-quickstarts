@@ -1,0 +1,48 @@
+name: lane probe
+
+on:
+  schedule:
+    - cron: "25 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe DeepSeek lanes
+        env:
+          FIKRA_API_KEY: ${{ secrets.FIKRA_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, time, urllib.request
+          key = os.environ["FIKRA_API_KEY"]
+          models = ["deepseek-v4.1-flash", "deepseek-v4.1-flash-1017", "deepseek-v4-flash-0731"]
+          results = {}
+          body = json.dumps({"model": "x", "messages": [{"role":"user","content":"ping, reply ok"}], "max_tokens": 4}).encode()
+          for m in models:
+              t0 = time.time()
+              req = urllib.request.Request(
+                  "https://api.fikraapi.co.ke/v1/chat/completions",
+                  data=json.dumps({"model": m, "messages": [{"role":"user","content":"ping, reply ok"}], "max_tokens": 64}).encode(),
+                  headers={"Authorization": "Bearer "+key, "Content-Type": "application/json"},
+                  method="POST")
+              try:
+                  r = urllib.request.urlopen(req, timeout=60)
+                  latency_ms = int((time.time()-t0)*1000)
+                  results[m] = {"status": "ok", "latency_ms": latency_ms}
+              except Exception as e:
+                  results[m] = {"status": "error", "error": str(e)[:120]}
+          results["_checked_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+          json.dump(results, open("lanes.json","w"), indent=1)
+          PY
+      - name: Commit status
+        run: |
+          git config user.name "lane-probe"
+          git config user.email "lane-probe@users.noreply.github.com"
+          git add lanes.json
+          git diff --cached --quiet || git commit -m "probe: nightly lane check"
+          git push
