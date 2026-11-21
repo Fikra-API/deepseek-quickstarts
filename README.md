@@ -2,17 +2,17 @@
 
 Runnable clients for the [Fikra API](https://fikraapi.co.ke) DeepSeek lanes. Fikra API is an OpenAI-compatible inference endpoint from Nairobi, billed per token in USD with a $1 minimum top-up (M-Pesa or card).
 
-Headline lane, `deepseek-v4.1-flash`: $0.045 per 1M input tokens, $0.09 per 1M output tokens, 1M context. The October 17 build (`deepseek-v4.1-flash-1017`) is $0.05/$0.11. The July 31 build (`deepseek-v4-flash-0731`) is $0.045/$0.10. Prices verified 2026-10-19 on the [pricing page](https://fikraapi.co.ke/pricing).
+Headline lane, `deepseek-v4.1-flash`: $0.1875 per 1M input tokens, $0.75 per 1M output tokens, 1M context. The October 17 build (`deepseek-v4.1-flash-1017`) is $0.1875/$0.75. The July 31 build (`deepseek-v4-flash-0731`) is $0.55/$1.65. A free window, `deepseek-v4-1-flash-economy-free`, is also available. Prices checked 2026-11-21 on the [pricing page](https://fikraapi.co.ke/pricing).
 
 ## DeepSeek lanes
 
 | Model id | In $/1M | Out $/1M | Context | Output cap |
 | --- | --- | --- | --- | --- |
-| deepseek-v4.1-flash | 0.045 | 0.09 | 1,048,576 | 65,536 |
-| deepseek-v4.1-flash-1017 | 0.05 | 0.11 | 1,048,576 | 65,536 |
-| deepseek-v4-flash-0731 | 0.045 | 0.10 | 1,048,576 | 65,536 |
+| deepseek-v4.1-flash | 0.1875 | 0.75 | 1,048,576 | 65,536 |
+| deepseek-v4.1-flash-1017 | 0.1875 | 0.75 | 1,048,576 | 65,536 |
+| deepseek-v4-flash-0731 | 0.55 | 1.65 | 1,048,576 | 65,536 |
 
-Model ids mirror `GET /v1/models`. The same `/v1` also serves GLM 5.3 ($1.05/$3.35), GLM 5.3 Flash ($0.155/$0.49), GLM 5.2 ($0.75/$1.65), Kimi K3 ($2.10/$10.50), StepFun Step 5 preview ($1.25/$3.30), Qwen 3.8 27B ($0.045/$0.35, cached input $0.10), MiMo V2.6 Pro ($0.60/$1.20), Nemotron 3.5 Super VL ($0.50/$1.25), a Gemini 4 Argon forward route and the house lanes (`fikra-auto`, `fikra-auto-pro`, `fikra-pro-20b`, `fikra-pro-120b`, `fikra-code-35b`, `fikra-qwen-27b`, `fikra-qwen-max`).
+Model ids mirror `GET /v1/models`. The same `/v1` also serves GLM 5.3 ($1.225/$3.85), GLM 5.3 Flash ($0.1875/$0.625), GLM 5.2 ($1.75/$5.50), Kimi K3 ($2.4375/$12.1875), Qwen 3.8 27B ($0.045/$0.35), MiMo V2.6 Pro ($0.50/$1.00), Nemotron 3.5 Super VL ($0.50/$1.25), Gemini 4 Argon ($2.50/$12.00), Qwen 4 Max ($1.875/$5.625), and the house lanes (`fikra-auto`, `fikra-auto-pro`, `fikra-pro-20b`, `fikra-pro-120b`, `fikra-code-35b`, `fikra-qwen-27b`).
 
 ## Setup
 
