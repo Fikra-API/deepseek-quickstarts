@@ -1,6 +1,6 @@
 # deepseek-quickstarts
 
-Runnable clients for the [Fikra API](https://fikraapi.co.ke) DeepSeek lanes. Fikra API is an OpenAI-compatible inference endpoint from Nairobi, billed per token in USD with a $1 minimum top-up (M-Pesa or card).
+Runnable clients for the [Fikra API](https://fikraapi.co.ke) DeepSeek lanes. Fikra API is an OpenAI-compatible inference endpoint from Nairobi, billed per token in USD with a $5 minimum top-up (M-Pesa or card).
 
 Headline lane, `deepseek-v4.1-flash`: $0.1875 per 1M input tokens, $0.75 per 1M output tokens, 1M context. The October 17 build (`deepseek-v4.1-flash-1017`) is $0.1875/$0.75. The July 31 build (`deepseek-v4-flash-0731`) is $0.55/$1.65. A free window, `deepseek-v4-1-flash-economy-free`, is also available. Prices checked 2026-11-21 on the [pricing page](https://fikraapi.co.ke/pricing).
 
